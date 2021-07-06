@@ -1,6 +1,6 @@
-const startBtn = document.querySelector('#start');
+const startBtn = document.querySelector('.start');
 const screens = document.querySelectorAll('.screen');
-const timeList = document.querySelector('#time-list');
+const timeList = document.querySelector('.time-list');
 const timeEl = document.querySelector('#time');
 const board = document.querySelector('#board');
 let time = 0;
@@ -29,10 +29,9 @@ board.addEventListener('click', event => {
 
 
 function startGame() {
-    setInterval(decreaseTime, 1000);
-    setTime(time); // функцию decreaseTime помещаем в setInterval и вызываем через каждую секунду
+    setInterval(decreaseTime, 1000); // функцию decreaseTime помещаем в setInterval и вызываем через каждую секунду
     createRandomCircle();
-    // timeEl.innerHTML = `00:${time}`;
+    setTime(time);
 }
 
 function decreaseTime() { //вызываем функцию для изменения time на одну секунду и помещаем в setInterval   
